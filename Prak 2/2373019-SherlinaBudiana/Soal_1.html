@@ -1,0 +1,99 @@
+<!--<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 2373019-SherlinaBudiana </title>
+
+    <style>
+        .a { grid-area: item_a; background-color: blue;}
+        .b { grid-area: item_b; background-color: red;}
+        .c { grid-area: item_c; background-color: greenyellow;}
+        .d { grid-area: item_d; background-color: yellow;}
+        .e { grid-area: item_e; background-color: red;}
+        .f { grid-area: item_f; background-color: greenyellow;}
+        .g { grid-area: item_g; background-color: yellow;}
+        .h { grid-area: item_h; background-color: blue;}
+        .x { grid-area: item_x; background-color: black; color: white;}
+    
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(5,100px);
+            grid-template-areas: 
+                'item_a item_a item_a item_a item_d'
+                'item_g item_b item_b item_c item_d'
+                'item_g item_f item_x item_c item_d'
+                'item_g item_f item_e item_e item_d'
+                'item_g item_h item_h item_h item_h';
+            padding: 5px;
+        }
+        .grid-container > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+   <div class = "grid-container">
+        <div class = "a"> A </div>
+        <div class = "b"> B </div>
+        <div class = "c"> C </div>
+        <div class = "d"> D </div>
+        <div class = "e"> E </div>
+        <div class = "f"> F </div>
+        <div class = "g"> G </div>
+        <div class = "h"> H </div>
+        <div class = "x"> X </div>
+   </div>
+</body>
+
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        tr,td {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table style="border-spacing: 0px;">
+        <tr>
+            <td colspan="4" style="background-color: blue;">A</td>
+            <td rowspan="4" style="background-color: yellow;">D</td>
+        </tr>
+        <tr>
+            <td rowspan="4" style="background-color: yellow;">G</td>
+            <td colspan="2" style="background-color: red;">B</td>
+            <td rowspan="2" style="background-color: greenyellow;">C</td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="background-color: greenyellow;">F</td>
+            <td style="background-color: black; color: white;">X</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: red;">E</td>
+        </tr>
+        <tr>
+            <td colspan="4" style="background-color: blue;">H</td>
+        </tr>
+    </table>
+</body>
+</html>
