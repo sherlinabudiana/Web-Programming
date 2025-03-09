@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Form Tambah Data User
+    </h1>
+    <table>
+        <form id="DataUser">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="text" id="Name">
+                    <span id="NameError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="text" id="Address">
+                    <span id="AddressError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="email" id="Email">
+                    <span id="EmailError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Home Page
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="url" id="HomePage">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Birthday
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="date" id="Birthday">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Favorite Colour
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="color" id="FavoriteColour">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IPK
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="number" min="0" max="4" step="0.1" value="0" id="IPK">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Phone Number
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{7,10}" id="PhoneNumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <button type="submit" id="add">Add</button>
+                </td>
+            </tr>
+        </form>
+    </table>
+
+    <script>
+        document.getElementById("DataUser").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            let Name = document.getElementById("Name").value;
+            let NameError = document.getElementById("NameError");
+            if(Name === ""){
+                NameError.textContent = "Name is required!!!";
+            }else{
+                NameError.textContent = "";
+            }
+
+            let Address = document.getElementById("Address").value;
+            let AddressError = document.getElementById("AddressError");
+            if(Address === ""){
+                AddressError.textContent = "Adress is required!!!";
+            }else{
+                AddressError.textContent = "";
+            }
+
+            let Email = document.getElementById("Email").value;
+            let EmailError = document.getElementById("EmailError");
+            if(Email === ""){
+                EmailError.textContent = "Harap isi bidang ini";
+            }else if(!Email.includes("@")){
+                EmailError.textContent = "Sertakan '@' pada alamat ini. '${Email}' tidak memiliki '@'";
+            }else{
+                EmailError.textContent = "";
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

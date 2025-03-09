@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        td,
+        th {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="width: 500px; border: 1px solid black; border-spacing: 1px;">
+        <form method="">
+            <tr>
+                <th colspan="2" style="background-color: rgb(172, 169, 169); border: 1px solid rgb(0, 0, 0);">
+                    Edit Profile
+                </th>
+            </tr>
+
+            <tr>
+                <td style="width: 30%; border: 1px solid rgb(0, 0, 0);">
+                    <img id="preview" src="#" alt="Image Preview" style="display:none; width: 140px; height: 140px;" />
+
+                    <div style="text-align: center;">
+                        <label for="profile"
+                            style="border: 1px solid black; padding: 5px 5px; font-size: 14px;">Upload</label>
+                        <input type="file" id="profile" accept="image/*" src="#" style="display:none;" width="140"
+                            height="140" alt="Foto Profil Pengguna">
+                    </div>
+                </td>
+
+                <td style="border: 1px solid rgb(0, 0, 0);">
+                    <table style="width: 350px;">
+                        <tr>
+                            <td>Name</td>
+                            <td>
+                                <div style="text-align: right;">
+                                    <input type="text" id="name" style="border: 0px; width: 203px; height: 22px;;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td>
+                                <div style="text-align: right;">
+                                    <select style="width: 207px; height: 24px;">
+                                        <optgroup label="Programmer">
+                                            <option>Senior Programmer</option>
+                                            <option>Junior Programmer</option>
+                                        </optgroup>
+                                        <optgroup label="System Analyst">
+                                            <option>Senior Analyst</option>
+                                            <option>Junior Analyst</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <div style="text-align: right;">
+                                    <input type="text" id="password" style="width: 200px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Confirm Password</td>
+                            <td>
+                                <div style="text-align: right;">
+                                    <input type="password" id="confirmPassword" style="width: 200px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right;">
+                                <input type="reset" value="Reset">
+                                <input type="submit" value="Update">
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+        </form>
+    </table>
+
+    <script>
+        document.getElementById('profile').addEventListener('change', function () {
+            let file = this.files[0];
+            let reader = new FileReader();
+
+            reader.onload = function (event) {
+                let base64String = event.target.result;
+                document.getElementById('preview').src = base64String;
+                document.getElementById('preview').style.display = 'block';
+                console.log(base64String);
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+
+</body>
+
+</html>
