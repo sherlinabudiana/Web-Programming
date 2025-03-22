@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            border: 2px dotted grey;
+            border-width: 2px;
+            margin-left: 3px;
+            margin-bottom: 3px;
+            text-align: center;
+            position: relative;
+        }
+
+        a {
+            display: block;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            left: 0;
+            position: absolute;
+            display: none;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            border: 2px dotted grey;
+            border-width: 2px;
+            text-align: center;
+            padding: 0px;
+        }
+
+        .submenu a:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <li><a>Home</a></li>
+        <li class="dropdown">
+            <a>News</a>
+            <ul class="submenu">
+                <li><a>Sports</a></li>
+                <li><a>Music</a></li>
+                <li><a>Movie</a></li>
+            </ul>
+        </li>
+        <li><a>Contact</a></li>
+        <li><a>About</a></li>
+    </ul>
+</body>
+
+</html>
