@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- <form> -->
+        <div>
+            <label id="a_label">Angka Pertama&emsp;: </label>
+            <input type="text" id="a">
+        </div>
+        <div>
+            <label id="b_label">Angka Kedua&emsp;&ensp;&nbsp;: </label>
+            <input type="text" id="b">
+        </div>
+        <div>
+            <button onclick="count()">Count</button>
+        </div>
+    <!-- </form> -->
+
+    <table>
+        <tr>
+            <td id="angka1.1"></td>
+            <td>+</td>
+            <td id="angka2.1"></td>
+            <td>=</td>
+            <td id="hasil1"></td>
+        </tr>
+        <tr>
+            <td id="angka1.2"></td>
+            <td>-</td>
+            <td id="angka2.2"></td>
+            <td>=</td>
+            <td id="hasil2"></td>
+        </tr>
+    </table>
+
+
+
+    <script type="text/javascript">
+        function count() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+
+            if (isNaN(a)) {
+                alert("angka pertama bukan angka");
+            return;
+            }else if (isNaN(b)) {
+                alert("angka kedua harus angka");
+            return;
+            }else if (isNaN(a) && isNaN(b)) {
+                alert("angka pertama dan kedua harus angka");
+            return;
+            }
+
+            document.getElementById("angka1.1").innerHTML=a;
+            document.getElementById("angka2.1").innerHTML=b;
+            document.getElementById("angka1.2").innerHTML=a;
+            document.getElementById("angka2.2").innerHTML=b;
+
+            document.getElementById("hasil1").innerHTML=a+b;
+            document.getElementById("hasil2").innerHTML=a-b;
+        }
+
+    </script>
+</body>
+
+
+</html>
