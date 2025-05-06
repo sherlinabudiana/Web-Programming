@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        table{
+            border: 1px solid white;
+        }
+        th{
+            background-color: #97c69f;
+        }
+
+        .hover{
+            background-color: #CCFFAA;
+        }
+        .even{
+            background-color: #f3cc97;
+        }
+        .odd{
+            background-color: #b9d6ef;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Position</th>
+            <th>Programming Language</th>
+            <th>Ratings</th>
+        </tr>
+        <tr id="1"  class="even" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <td>1</td>
+            <td>C</td>
+            <td>18.058%</td>
+        </tr>
+        <tr id="2" class="odd" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <td>2</td>
+            <td>Java</td>
+            <td>18.051%</td>
+        </tr>
+        <tr id="3" class="even" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <td>3</td>
+            <td>C++</td>
+            <td>9.707%</td>
+        </tr>
+        <tr id="4" class="odd" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <td>4</td>
+            <td>PHP</td>
+            <td>9.662%</td>
+        </tr>
+        <tr id="5" class="even" onmouseover="hover(this)" onmouseout="unhover(this)" on>
+            <td>5</td>
+            <td>(Visual) Basic</td>
+            <td>6.392%</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function hover(ob){
+            document.getElementById(ob.id).className = "hover";
+        }
+
+        function unhover(ob){
+            if (parseInt(ob.id) % 2 == 0) {
+                document.getElementById(ob.id).className = "odd";
+            } else{
+                document.getElementById(ob.id).className = "even";
+            }
+            
+        }
+
+
+    </script>
+</body>
+
+</html>
