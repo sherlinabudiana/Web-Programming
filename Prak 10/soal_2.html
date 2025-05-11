@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="input">
+        <input type="button" id="add" value="Add">
+        <input type="button" id="search" value="Search">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#add').click(function () {
+                var inputValue = $('#input').val();
+                $('#input').val('');
+                $('div').css('text-decoration', 'none');
+                $('<div>' + inputValue + '</div>').appendTo('body');
+            });
+
+            $('#search').click(function () {
+                var cari = $('#input').val();
+                $('#input').val('');
+                $("div:contains('"+cari+"')").css('text-decoration', 'underline');
+            });
+        });
+    </script>
+</body>
+
+</html>
