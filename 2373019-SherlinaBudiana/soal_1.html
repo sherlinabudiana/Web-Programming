@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        ol{
+            list-style-type: none;
+            display: flex;
+        }
+
+        ol li{
+            width: 200px;
+            height: fit-content;
+            text-decoration: underline;
+            background-color: rgb(241, 71, 153);
+            color: white;
+            margin-right: 15px;
+            padding: 5px;
+        }
+
+        ol li ol{
+            list-style-type: none;
+            display: block;
+            background-color: white;
+            padding-left: 5px;
+        }
+
+        ol li ol li{
+            text-decoration: underline;
+            margin-top: 5px;
+            color: black;
+            background-color: white;
+            width: 190px;
+            padding-left: 0px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li id="head1">jQuery
+            <ol id = "subhead1">
+                <li>Download</li>
+                <li>Documentation</li>
+                <li>Blog</li>
+            </ol>
+        </li>
+        <li id="head2">Community
+            <ol id="subhead2">
+                <li>Mailing List</li>
+                <li>Tutorials</li>
+                <li>Demos</li>
+                <li>Plugins</li>
+            </ol>
+        </li>
+        <li id="head3">Development
+            <ol id="subhead3">
+                <li>Source Code</li>
+                <li>Bug Tracking</li>
+                <li>Recent Changes</li>
+            </ol>
+        </li>
+    </ol>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("li ol").hide();
+            $("#head1").hover(
+                function(){
+                    $("#subhead1").show();
+                },
+                function(){
+                    $("#subhead1").hide();
+                }
+            );
+            $("#head2").hover(
+                function(){
+                    $("#subhead2").show();
+                },
+                function(){
+                    $("#subhead2").hide();
+                }
+            );
+            $("#head3").hover(
+                function(){
+                    $("#subhead3").show();
+                },
+                function(){
+                    $("#subhead3").hide();
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
