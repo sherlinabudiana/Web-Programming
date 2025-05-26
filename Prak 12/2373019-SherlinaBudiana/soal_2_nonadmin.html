@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        body{
+            font-weight: bold;
+            font-size: 24px;
+        }
+        span{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="color: red;">
+        Username :
+        <span id="username"></span>
+        Tidak Terdaftar!
+    </div>  
+    <div>
+        <a href="soal_2.html">Kembali ke halaman login</a>
+    </div>
+    
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Get the username from localStorage
+            var username = localStorage.getItem('username');
+            
+            // Set the username in the paragraph
+            $('#username').text(username);
+        });
+    </script>
+</body>
+
+</html>

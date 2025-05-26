@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373019-SherlinaBudiana</title>
+
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        th{
+            font-size: larger;
+            background-color: grey;
+        }
+
+        td{
+            border: 1px solid black;
+            padding: 2px;
+        }
+
+        input{
+            width: 225px;
+        }
+
+        select{
+            width: 232px;
+        }
+
+        div{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="2">Add Profile</th>
+        </tr>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td>
+                <input type="text" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td>
+                <select name="position">
+                    <optgroup label="Programmer">
+                        <option value="Senior Programmer">Senior Programmer</option>
+                        <option value="Junior Programmer">Junior Programmer</option>
+                    </optgroup>
+                    <optgroup label="Analyst">
+                        <option value="Senior Analyst">Senior Analyst</option>
+                        <option value="Junior Analyst">Junior Analyst</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" name="password">
+            </td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td>
+                <input type="password" name="confirm_password">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right; padding-right: 10px;">
+                <input type="button" value="Reset" style="width: 75px;">
+                <input type="button" value="Save" style="width: 75px;">
+            </td>
+        </tr>
+    </table>  
+    <div id="alert"></div>
+    
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[type="button"]').click(function() {
+                if ($(this).val() === 'Reset') {
+                    $('input[type="text"], input[type="password"]').val('');
+                    $('select').val($('select option:first').val());
+                } 
+                
+                else if ($(this).val() === 'Save') {
+                    var isValid = true;
+                    $('#alert').empty();
+                    if($('input[name="name"]').val() === '') {
+                        $('#alert').append('<br>');
+                        $('#alert').append('Input nama belum diisi!');
+                        isValid = false;
+                    }if($('input[name="password"]').val() === '') {
+                        $('#alert').append('<br>');
+                        $('#alert').append('Input password belum diisi!');
+                        isValid = false;
+                    }if($('input[name="confirm_password"]').val() ==='') {
+                        $('#alert').append('<br>');
+                        $('#alert').append('Input confirm password belum diisi!');
+                        isValid = false;
+                    }if($('input[name="password"]').val() !== $('input[name="confirm_password"]').val()) {
+                        $('#alert').append('<br>');
+                        $('#alert').append('Password dan confirm password belum sama!');
+                        isValid = false;
+                    }
+
+
+                    if (isValid) {
+                        window.location.href = 'soal_1_page2.html';
+                        localStorage.setItem('name', $('input[name="name"]').val());
+                        localStorage.setItem('position', $('select[name="position"]').val());
+                    }
+                    
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
